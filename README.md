@@ -9,11 +9,11 @@
 - stanfordcorenlp
 - scikit-learn
 
-然后需要进入https://stanfordnlp.github.io/CoreNLP/下载两个东西，一是![微信图片_20190515194033](C:\Users\15811\Desktop\组\微信图片_20190515194033.png)
+然后需要进入https://stanfordnlp.github.io/CoreNLP/
 
-二是
+下载两个东西，一是**Download CoreNLP 3.9.2**
 
-![微信图片_20190515194045](C:\Users\15811\Desktop\组\微信图片_20190515194045.png)
+二是**MODEL JAR** ,语言选择 **English**
 
 一是一个压缩包，解压完后是一个文件夹，名字是stanford-corenlp-full-2018-10-05，然后将二一个下载好的jar包放入一的文件夹中
 
