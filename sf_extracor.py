@@ -172,16 +172,16 @@ def lda_train(route):
 	cntTf = tf_vectorizer.fit_transform(doclist)
 	# print(cntTf)
 	#调参
-	parameters = {'learning_method':['online'], 
-				'n_components':range(20, 100, 10),
-				'learning_offset':[2,10,15],
-				'perp_tol': (0.001, 0.01, 0.1),
-				'max_iter':[10,100]}
-	lda = LatentDirichletAllocation()
-	gri = GridSearchCV(estimator=lda, param_grid=parameters,cv = 3,verbose = 1)
-	#lda = LatentDirichletAllocation(n_topics=20, learning_method = 'online')
-	gri.fit(cntTf)
-	lda = gri.best_estimator_
+	# parameters = {'learning_method':['online'], 
+	# 			'n_components':range(20, 100, 10),
+	# 			'learning_offset':[2,10,15],
+	# 			'perp_tol': (0.001, 0.01, 0.1),
+	# 			'max_iter':[10,100]}
+	#lda = LatentDirichletAllocation()
+	#gri = GridSearchCV(estimator=lda, param_grid=parameters,cv = 3,verbose = 1)
+	lda = LatentDirichletAllocation(n_components=20, learning_method = 'online',max_iter = 100,verbose = 1)#n_components即为主题数
+	#gri.fit(cntTf)
+	#lda = gri.best_estimator_
 	docres = lda.fit(cntTf)
 	n_top_words=20
 	tf_feature_names = tf_vectorizer.get_feature_names()
